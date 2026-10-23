@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as t}from"./chunks/framework.DUl3UDQb.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"PUI组件库/Form/group表单项分组.md","filePath":"PUI组件库/Form/group表单项分组.md"}'),o={name:"PUI组件库/Form/group表单项分组.md"};function a(s,_,c,n,p,m){return t(),r("div")}const f=e(o,[["render",a]]);export{i as __pageData,f as default};

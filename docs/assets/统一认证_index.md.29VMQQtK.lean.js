@@ -1,1 +1,0 @@
-import{_ as t,c as a,o,ae as l}from"./chunks/framework.B3QT7qQe.js";const m=JSON.parse('{"title":"统一登录包","description":"","frontmatter":{},"headers":[],"relativePath":"统一认证/index.md","filePath":"统一认证/index.md"}'),r={name:"统一认证/index.md"};function i(n,e,s,c,p,_){return o(),a("div",null,e[0]||(e[0]=[l("",5)]))}const u=t(r,[["render",i]]);export{m as __pageData,u as default};

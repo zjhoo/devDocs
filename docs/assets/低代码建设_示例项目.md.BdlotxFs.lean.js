@@ -1,1 +1,0 @@
-import{_ as r,c as t,o as a,ae as o}from"./chunks/framework.B3QT7qQe.js";const s=JSON.parse('{"title":"已开发项目","description":"","frontmatter":{},"headers":[],"relativePath":"低代码建设/示例项目.md","filePath":"低代码建设/示例项目.md"}'),l={name:"低代码建设/示例项目.md"};function i(n,e,c,d,_,f){return a(),t("div",null,e[0]||(e[0]=[o("",2)]))}const p=r(l,[["render",i]]);export{s as __pageData,p as default};
