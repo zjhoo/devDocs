@@ -1,0 +1,8 @@
+node_modules
+docs/.vuepress/dist
+
+docs/.vuepress/pui_doc
+
+# docs/.vitepress/dist
+docs/.vitepress/pui_doc
+docs/.vitepress/cache

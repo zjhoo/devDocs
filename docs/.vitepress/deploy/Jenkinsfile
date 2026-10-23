@@ -1,0 +1,68 @@
+pipeline {
+    agent none
+    environment {
+         // 镜像仓库地址
+        register = "harbor.scshyzh.cn:50148/enterprise-v8/pui-doc"
+         //镜像的名称和版本
+        image_name = "pui-doc-web"
+        // 定义大版本，小版本拼接jenkins构建的number
+        image_tag = "1.0."
+        // 执行的环境
+        profile = "test"
+    }
+    stages {
+        // stage('构建') {
+        //     agent {
+        //         docker {
+        //             image 'harbor.scshyzh.cn:50148/enterprise-v8/node/node:23.1'
+        //             args '-u root'
+        //         }
+        //     }
+        //     steps {
+        //         //    npm install --registry=https://registry.npmmirror.com
+        //         sh """
+        //            pwd
+        //            npm cache clean --force
+        //            npm install --registry=http://10.2.163.218:4873
+        //            npm run build
+        //         """
+        //     }
+        // }
+        stage('镜像构建并推送') {
+            agent any
+            steps{
+                sh 'pwd'
+                sh """
+                cd ./docs/.vitepress/
+                rm -rf deploy/dist
+                cp -r dist deploy
+                cd deploy
+                chmod +x docker-build.sh
+                ./docker-build.sh ${register} ${image_name} ${image_tag}${BUILD_NUMBER} ${profile}
+                """
+            }
+        }
+        stage('启动') {
+            agent any
+            steps{
+                script{
+                    // 定义变量
+                    def NEW_VERSION="${image_tag}${BUILD_NUMBER}"
+                    def IMAGE_NAME="${image_name}"
+                    // 镜像前缀
+                    def IMAGE_PREFIX="${register}/"+ IMAGE_NAME
+                    // 定义请求体
+                    def JSON_PAYLOAD='{"kind":"deployments","namespace":"enterprise-v8-test","name":"'+ IMAGE_NAME +'","images":{"'+ IMAGE_PREFIX +'": "'+ IMAGE_PREFIX  +':' + NEW_VERSION + '"}}'
+                    // 此步骤需要先在k8s上创建deploy，然后通过kuboard的ci/cd 进行操作
+                   sh """
+                       curl -X PUT \
+                           -H "content-type: application/json" \
+                           -H "Cookie: KuboardUsername=admin; KuboardAccessKey=k3d2jc4763h4.yiw8iazbfmmx2328mhha3yi8tmk3ers6" \
+                           -d '${JSON_PAYLOAD}' \
+                           "http://kuboard-v3.kuboard/kuboard-api/cluster/default/kind/CICDApi/admin/resource/updateImageTag"
+                   """
+                }
+            }
+        }
+    }
+}
