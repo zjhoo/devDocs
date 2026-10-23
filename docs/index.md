@@ -16,5 +16,5 @@ hero:
       text: 新框架后端
       link: /新企业端/
 
-footer: 寰宇纵横 内部资料，禁止对外传播 | Copyright © 2025
+footer:  内部资料，相关地址已屏蔽， 禁止对外传播 | Copyright © 2025
 ---

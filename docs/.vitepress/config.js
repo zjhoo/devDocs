@@ -3,7 +3,7 @@ export default {
     description: '内部文档',//mate标签description，多用于搜索引擎抓取摘要
     ignoreDeadLinks: true,
     themeConfig: {
-        base: '/docs/',
+        base: '/devDocs/',
         siteTitle: "内部文档",
         logo: "/logo.png",
         // ignoreDeadLinks: true, // 忽略所有死链
