@@ -378,7 +378,7 @@ import{_ as a,c as i,o as n,ae as p}from"./chunks/framework.DUl3UDQb.js";const l
 <span class="line"><span></span></span>
 <span class="line"><span># 国家专项任务检查</span></span>
 <span class="line"><span>gov-task-api:</span></span>
-<span class="line"><span>  base-url: https://data-sk-wh.scasst.net</span></span>
-<span class="line"><span>  username: MSadmin</span></span>
-<span class="line"><span>  password: MSadmin.123</span></span>
+<span class="line"><span>  base-url: https://****-sk-wh.scasst.net</span></span>
+<span class="line"><span>  username: **admin</span></span>
+<span class="line"><span>  password: ********</span></span>
 <span class="line"><span>  company-code: 511410025</span></span></code></pre></div><p>配置中会引用datasource.yaml中配置的数据库连接信息</p><p>如果本地开发要测试，比如要把服务启动到自己的命名空间中，则在starter的resource目录下，创建 application.yaml, 可以覆盖nacos中的配置， application.yaml目录不要提交到代码仓库中</p><h2 id="部署发版" tabindex="-1">部署发版 <a class="header-anchor" href="#部署发版" aria-label="Permalink to &quot;部署发版&quot;">​</a></h2><p>目前部署都是基于jenkin打包自动调用k8s的接口进行发布，我们主要做的就是初始化任务，这个过程可以交给项目初始化的人员进行统一处理， 开发人员要做的就是登录jenkins找到对应任务进行构建就行</p>`,55)]))}const y=a(e,[["render",t]]);export{c as __pageData,y as default};
