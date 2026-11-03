@@ -300,7 +300,7 @@ import{_ as a,c as i,o as n,ae as p}from"./chunks/framework.DUl3UDQb.js";const l
 <span class="line"><span>      config:</span></span>
 <span class="line"><span>        server-addr: \${NACOS_SERVER_ADDR:10.1.34.16:30848}</span></span>
 <span class="line"><span>        username: \${NACOS_USERNAME:nacos}</span></span>
-<span class="line"><span>        password: \${NACOS_PASSWORD:HYzh248713}</span></span>
+<span class="line"><span>        password: \${NACOS_PASSWORD:******}</span></span>
 <span class="line"><span>        namespace: \${NACOS_NAMESPACE:enterprise-v8-test}</span></span>
 <span class="line"><span>        file-extension: yaml</span></span>
 <span class="line"><span>        group: \${spring.application.name}</span></span>
